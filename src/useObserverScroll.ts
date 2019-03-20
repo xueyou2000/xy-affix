@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 /**
  * 监听滚动条事件
@@ -19,5 +19,5 @@ export function useObserverScroll(callback: (event: UIEvent) => void, deps: any[
             }
             window.removeEventListener("resize", callback);
         };
-    }, [...deps]);
+    }, deps);
 }

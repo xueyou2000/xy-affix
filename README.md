@@ -2,7 +2,10 @@
 
 ---
 
-> 基于`React Hooks` + `typescript`的基础组件
+> 图钉组件, 固定某个元素
+
+-   [x] 支持上下 2 个方向的固定
+-   [x] offset 偏移量指定
 
 ## 安装
 
@@ -16,11 +19,16 @@ yarn add xy-affix
 
 ## 使用
 
-```ts
+```tsx
 import React from "react";
 import ReactDOM from "react-dom";
 import Affix from "xy-affix";
-ReactDOM.render(<Affix />, container);
+ReactDOM.render(
+    <Affix>
+        <button>被固定的按钮</button>
+    </Affix>,
+    container
+);
 ```
 
 ## 开发

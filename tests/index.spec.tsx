@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-testing-library";
-import Component from "../src";
+import Affix from "../src";
 
-describe("component", () => {
+describe("Affix", () => {
     test("render", () => {
-        const wrapper = render(<Component />);
-        const div = wrapper.getByText("Hello");
-        expect(div.textContent).toBe("Hello");
+        const wrapper = render(<Affix />);
+        const div = wrapper.container.querySelector(".xy-affix");
+        expect(div).toBeDefined();
     });
 });

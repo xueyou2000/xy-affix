@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
-import { AffixProps } from "./interface";
 import classNames from "classnames";
-import { getViewportSize, isWindow, getScrollY, getTagrt } from "./utils";
+import React, { useRef, useState } from "react";
+import { AffixProps } from "./interface";
 import { useObserverScroll } from "./useObserverScroll";
+import { getScrollY, getTagrt, getViewportSize, isWindow } from "./utils";
 
 export const PlacementTop = "top";
 
@@ -45,10 +45,10 @@ export function Affix(props: AffixProps) {
 
         if (iswindow) {
             if (placement === PlacementTop) {
-                toSetFixed(rect.top - offset <= 0);
+                toSetFixed(rect.top - offset <= 0, true);
             } else {
                 const [, viewportHeight] = getViewportSize();
-                toSetFixed(rect.bottom + offset >= viewportHeight);
+                toSetFixed(rect.bottom + offset >= viewportHeight, true);
             }
         } else {
             if (placement === PlacementTop) {
