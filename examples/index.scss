@@ -17,11 +17,12 @@
     border-bottom: 1px solid #ebedf0;
 }
 .scrollable-container {
-    height: 100px;
+    height: 200px;
     overflow-y: scroll;
+    position: relative;
 }
 .background {
-    padding-top: 60px;
-    height: 300px;
+    padding-top: 160px;
+    height: 600px;
     background-image: url(https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg);
 }

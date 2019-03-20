@@ -1,36 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { AffixProps } from "./interface";
 import classNames from "classnames";
-import { getViewportSize } from "./utils";
+import { getViewportSize, isWindow, getScrollY, getTagrt } from "./utils";
+import { useObserverScroll } from "./useObserverScroll";
 
-const useWindowResize = (callback: (event: UIEvent) => void, deps: any[]) => {
-    useEffect(() => {
-        window.addEventListener("resize", callback);
-        return () => window.removeEventListener("resize", callback);
-    }, deps);
-};
-
-function useObserverScroll(callback: (event: UIEvent, down: boolean) => void, deps: any[], target?: () => HTMLElement) {
-    const lastScroll = useRef(window.pageYOffset);
-    useEffect(() => {
-        const ele = target ? target() : window;
-        function handleScroll(event: UIEvent) {
-            callback(event, !(lastScroll.current > window.pageYOffset));
-            lastScroll.current = window.pageYOffset;
-        }
-        if (ele) {
-            ele.addEventListener("scroll", handleScroll);
-        }
-        return () => {
-            ele.removeEventListener("scroll", handleScroll);
-        };
-    }, deps);
-}
-
-const PlacementTop = "top";
+export const PlacementTop = "top";
 
 export function Affix(props: AffixProps) {
-    const { prefixCls = "xy-affix", className, style, placement = PlacementTop, offset = 0, onChange, target, children } = props;
+    const { prefixCls = "xy-affix", className, style, placement = PlacementTop, offset = 0, onChange, children } = props;
     const [fixed, setFixed] = useState(false);
     const ref = useRef();
     const obEle = ref.current as HTMLElement;
@@ -39,13 +16,13 @@ export function Affix(props: AffixProps) {
     const fixedStyle = useRef<React.CSSProperties>({});
     const classString = classNames(prefixCls, className, `${prefixCls}-fixed`);
 
-    function toSetFixed(_fixed: boolean) {
+    function toSetFixed(_fixed: boolean, iswindow: boolean = false, extOffset: number = 0) {
         if (_fixed === fixed) {
             return;
         }
         if (_fixed) {
             fixedStyle.current = { position: "fixed", ...size };
-            fixedStyle.current[placement] = `${offset}px`;
+            fixedStyle.current[iswindow ? placement : "top"] = `${extOffset || offset}px`;
         } else {
             fixedStyle.current = {};
         }
@@ -58,24 +35,31 @@ export function Affix(props: AffixProps) {
 
     function adjustFixed() {
         const element = ref.current as HTMLElement;
-        if (!element) {
+        const target = getTagrt(props.target);
+        if (!element || !target) {
             return;
         }
 
+        const iswindow = isWindow(target);
         const rect = element.getBoundingClientRect();
-        const [, viewportHeight] = getViewportSize();
 
-        console.log(rect);
-
-        if (placement === PlacementTop) {
-            toSetFixed(rect.top - offset <= 0);
+        if (iswindow) {
+            if (placement === PlacementTop) {
+                toSetFixed(rect.top - offset <= 0);
+            } else {
+                const [, viewportHeight] = getViewportSize();
+                toSetFixed(rect.bottom + offset >= viewportHeight);
+            }
         } else {
-            toSetFixed(rect.bottom + offset >= viewportHeight);
+            if (placement === PlacementTop) {
+                toSetFixed(getScrollY(target) + offset >= element.offsetTop, false, rect.top);
+            } else {
+                toSetFixed(element.offsetTop + offset >= target.clientHeight + getScrollY(target) - rect.height, false, rect.top);
+            }
         }
     }
 
-    useWindowResize(adjustFixed, [fixed]);
-    useObserverScroll(adjustFixed, [fixed], target);
+    useObserverScroll(adjustFixed, [fixed], props.target);
 
     return (
         <div style={rawSizeStyle} ref={ref}>
