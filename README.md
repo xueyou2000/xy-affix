@@ -19,8 +19,8 @@ yarn add xy-affix
 ```ts
 import React from "react";
 import ReactDOM from "react-dom";
-import XyAffix from "xy-affix";
-ReactDOM.render(<XyAffix />, container);
+import Affix from "xy-affix";
+ReactDOM.render(<Affix />, container);
 ```
 
 ## 开发
@@ -41,4 +41,4 @@ yarn run test
 
 ## 开源许可
 
-rc-xy-affix is released under the MIT license.
+xy-affix is released under the MIT license.
