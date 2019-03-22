@@ -9,6 +9,10 @@ export default function() {
 
             <div className="block cadetblue">block1</div>
 
+            <Affix placement="auto" offset={20}>
+                <button style={{ marginLeft: "300px" }}>Affix Auto</button>
+            </Affix>
+
             <Affix offset={20}>
                 <button>Affix Top</button>
             </Affix>

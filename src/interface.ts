@@ -14,7 +14,7 @@ export interface AffixProps {
     /**
      * 固定放置方向
      */
-    placement?: "top" | "bottom";
+    placement?: "top" | "bottom" | "auto";
     /**
      * 偏移量
      * @description 距离窗口侧达到指定偏移量后触发
