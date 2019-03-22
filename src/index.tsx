@@ -2,7 +2,8 @@ import classNames from "classnames";
 import React, { useRef, useState } from "react";
 import { AffixProps } from "./interface";
 import { useObserverScroll } from "./useObserverScroll";
-import { getScrollY, getTagrt, getViewportSize, isWindow } from "./utils";
+import { getScrollY, getTagrt } from "./utils";
+import { isWindow, getViewportSize } from "utils-dom";
 
 export const PlacementTop = "top";
 
