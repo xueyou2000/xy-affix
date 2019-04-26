@@ -30,10 +30,10 @@
 
 ```sh
 # npm
-npm install --save xy-affix
+npm install --save xy-affix utils-dom classnames
 
 # yarn
-yarn add xy-affix
+yarn add xy-affix utils-dom classnames
 ```
 
 ## 使用

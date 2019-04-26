@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.1 (Fri Apr 26 2019)
+
+-   更新依赖
+
 ## 1.0.0 (Fri Mar 22 2019)
 
 -   将`getViewportSize`方法移除到外部包
