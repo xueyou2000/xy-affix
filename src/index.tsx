@@ -4,17 +4,20 @@ import { AffixProps } from "./interface";
 import { useObserverScroll } from "./useObserverScroll";
 import { getScrollY, getTagrt } from "./utils";
 import { isWindow, getViewportSize } from "utils-dom";
+import { AffixWrap } from "./AffixWrap";
 
 export const PlacementTop = "top";
 
 export function Affix(props: AffixProps) {
-    const { prefixCls = "xy-affix", className, style, placement = PlacementTop, offset = 0, onChange, children } = props;
+    const { prefixCls = "xy-affix", className, style, placement = "auto", offset = 0, onChange, children } = props;
     const [fixed, setFixed] = useState(false);
+    const wrapRef = useRef();
     const ref = useRef();
     const fixedStyle = useRef<React.CSSProperties>({});
     const obEle = ref.current as HTMLElement;
     const size = obEle ? { width: obEle.clientWidth, height: obEle.clientHeight } : {};
-    const rawSizeStyle: React.CSSProperties = fixed ? size : {};
+    // const rawSizeStyle: React.CSSProperties = fixed ? size : {};
+    const rawSizeStyle: React.CSSProperties = size;
     const classString = classNames(prefixCls, className, `${prefixCls}-fixed`);
 
     function toSetFixed(_fixed: boolean, _placement: string, iswindow: boolean = false, extOffset: number = 0) {
@@ -35,7 +38,7 @@ export function Affix(props: AffixProps) {
     }
 
     function adjustFixed() {
-        const element = ref.current as HTMLElement;
+        const element = wrapRef.current as HTMLElement;
         const target = getTagrt(props.target);
         if (!element || !target) {
             return;
@@ -65,8 +68,8 @@ export function Affix(props: AffixProps) {
     useObserverScroll(adjustFixed, [fixed], props.target);
 
     return (
-        <div style={rawSizeStyle} ref={ref}>
-            <div className={classString} style={Object.assign({}, fixedStyle.current, style)}>
+        <div style={rawSizeStyle} className={classString} ref={wrapRef}>
+            <div ref={ref} style={Object.assign({}, fixedStyle.current, style)}>
                 {children}
             </div>
         </div>

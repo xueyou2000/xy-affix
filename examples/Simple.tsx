@@ -22,6 +22,37 @@ export default function() {
             </Affix>
 
             <div className="block antiquewhite">block1</div>
+
+            {/* <div className="xy-manual-container">
+                <Affix className="top-affix" offset={0}>
+                    <ul className="demo-top">
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                        <li>
+                            <a href="#">按钮类型</a>
+                        </li>
+                    </ul>
+                </Affix>
+            </div> */}
         </div>
     );
 }

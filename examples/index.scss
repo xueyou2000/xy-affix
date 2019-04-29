@@ -26,3 +26,48 @@
     height: 600px;
     background-image: url(https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg);
 }
+
+.xy-manual-container {
+    position: relative;
+    min-height: 500px;
+    padding: 0 170px 144px 64px;
+    overflow: hidden;
+    font-size: 14px;
+    height: 3674px;
+    background: bisque;
+}
+
+.top-affix {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    background: aquamarine;
+}
+
+.demo-top {
+    margin: 16px 0;
+    padding-left: 0;
+    font-size: 12px;
+    list-style: none;
+    border-left: 1px solid #ebedf0;
+    a {
+        display: block;
+        width: 110px;
+        margin-left: -1px;
+        padding-left: 16px;
+        overflow: hidden;
+        color: #314659;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border-left: 1px solid transparent;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    & > li {
+        margin-left: 0;
+        padding-left: 0;
+        line-height: 1.5;
+        list-style: none;
+    }
+}
