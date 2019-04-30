@@ -16,6 +16,11 @@ export interface AffixProps {
      */
     placement?: "top" | "bottom" | "auto";
     /**
+     * 是否启用固定
+     * @description 默认true
+     */
+    fixed?: boolean;
+    /**
      * 偏移量
      * @description 距离窗口侧达到指定偏移量后触发
      */

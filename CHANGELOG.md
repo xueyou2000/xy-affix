@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.1 (Tue Apr 30 2019)
+
+-   从`storybook`换成`xy-manual-tools`来管理 demo
+-   改进`demo`
+
 ## 1.1.0 (Mon Apr 29 2019)
 
 -   修复固定逻辑, `absolute`样式时候无法正确固定问题

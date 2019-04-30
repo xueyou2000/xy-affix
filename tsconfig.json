@@ -13,15 +13,15 @@
         "lib": ["dom", "esnext"],
         "noFallthroughCasesInSwitch": true,
         "moduleResolution": "node",
+        "resolveJsonModule": true,
         "paths": {
-            "@/*": ["src/*"]
+            "xy-affix": ["src/index.tsx"],
+            "xy-affix/*": ["src/*"]
         },
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
-    },
-    "include": ["src"],
-    "exclude": ["node_modules", ".awcache"]
+    }
 }

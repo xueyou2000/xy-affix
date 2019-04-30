@@ -1,15 +1,14 @@
 import classNames from "classnames";
 import React, { useRef, useState } from "react";
+import { getViewportSize, isWindow } from "utils-dom";
 import { AffixProps } from "./interface";
 import { useObserverScroll } from "./useObserverScroll";
 import { getScrollY, getTagrt } from "./utils";
-import { isWindow, getViewportSize } from "utils-dom";
-import { AffixWrap } from "./AffixWrap";
 
 export const PlacementTop = "top";
 
 export function Affix(props: AffixProps) {
-    const { prefixCls = "xy-affix", className, style, placement = "auto", offset = 0, onChange, children } = props;
+    const { prefixCls = "xy-affix", className, style, fixed: fixedProp = true, placement = "auto", offset = 0, onChange, children } = props;
     const [fixed, setFixed] = useState(false);
     const wrapRef = useRef();
     const ref = useRef();
@@ -68,8 +67,8 @@ export function Affix(props: AffixProps) {
     useObserverScroll(adjustFixed, [fixed], props.target);
 
     return (
-        <div style={rawSizeStyle} className={classString} ref={wrapRef}>
-            <div ref={ref} style={Object.assign({}, fixedStyle.current, style)}>
+        <div style={Object.assign({}, rawSizeStyle, style)} className={classString} ref={wrapRef}>
+            <div ref={ref} style={fixedProp ? fixedStyle.current : {}}>
                 {children}
             </div>
         </div>

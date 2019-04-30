@@ -1,0 +1,22 @@
+[
+    {
+        "name": "AffixTop",
+        "title": "顶部固定",
+        "desc": "当窗口滚动过元素时， 将会启动固定。"
+    },
+    {
+        "name": "AffixBottom",
+        "title": "底部固定",
+        "desc": "当窗口滚动再元素上方时， 将会启动固定。"
+    },
+    {
+        "name": "AffixAuto",
+        "title": "智能固定",
+        "desc": "永远保持固定再视窗内部。"
+    },
+    {
+        "name": "UseContainer",
+        "title": "指定容器",
+        "desc": "用 target 设置 Affix 需要监听其滚动事件的元素，默认为 window。永远保持固定再视窗内部。"
+    }
+]

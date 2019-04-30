@@ -1,18 +1,10 @@
-.block {
-    width: 500px;
-    height: 1000px;
+.xy-affix {
+    position: relative;
+    z-index: 99;
 }
 
-.cadetblue {
-    background: cadetblue;
-}
-
-.antiquewhite {
-    background: antiquewhite;
-}
-
-.code-box-demo {
-    padding: 42px 24px 50px;
+.code-box-demo2 {
+    padding: 0 24px 0;
     color: rgba(0, 0, 0, 0.65);
     border-bottom: 1px solid #ebedf0;
 }
@@ -27,29 +19,25 @@
     background-image: url(https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg);
 }
 
-.xy-manual-container {
+.xy-manual-container2 {
     position: relative;
-    min-height: 500px;
     padding: 0 170px 144px 64px;
     overflow: hidden;
     font-size: 14px;
-    height: 3674px;
-    background: bisque;
 }
 
-.top-affix {
+.top-affix2 {
     position: absolute;
     top: 8px;
     right: 20px;
-    background: aquamarine;
 }
 
-.demo-top {
+.demo-top2 {
     margin: 16px 0;
     padding-left: 0;
     font-size: 12px;
     list-style: none;
-    border-left: 1px solid #ebedf0;
+    border-left: 1px solid #2196f3;
     a {
         display: block;
         width: 110px;
