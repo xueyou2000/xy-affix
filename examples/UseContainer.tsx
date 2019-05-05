@@ -3,7 +3,7 @@ import Affix from "../src";
 import "./index.scss";
 
 export default function() {
-    const containerRef = useRef();
+    const containerRef = useRef(null);
     return (
         <section className="code-box-demo2">
             <div className="scrollable-container" ref={containerRef}>

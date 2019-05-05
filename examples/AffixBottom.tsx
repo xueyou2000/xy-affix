@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Affix from "xy-affix";
+import Affix from "../src";
 import "./index.scss";
 
 export default function() {

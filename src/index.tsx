@@ -10,8 +10,8 @@ export const PlacementTop = "top";
 export function Affix(props: AffixProps) {
     const { prefixCls = "xy-affix", className, style, fixed: fixedProp = true, placement = "auto", offset = 0, onChange, children } = props;
     const [fixed, setFixed] = useState(false);
-    const wrapRef = useRef();
-    const ref = useRef();
+    const wrapRef = useRef(null);
+    const ref = useRef(null);
     const fixedStyle = useRef<React.CSSProperties>({});
     const obEle = ref.current as HTMLElement;
     const size = obEle ? { width: obEle.clientWidth, height: obEle.clientHeight } : {};

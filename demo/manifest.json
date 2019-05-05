@@ -1,20 +1,8 @@
 {
-  "components.css": "css/components.247ea402bb4f01e7cd9c.css",
+  "components.css": "css/components.00bcde0971215de9dea4.css",
   "components.js": "js/components.chunk.js",
   "main.js": "js/main.chunk.js",
   "runtime.js": "js/runtime.js",
-  "../es/examples/AffixAuto.d.ts": "../es/examples/AffixAuto.d.ts",
-  "../es/examples/AffixBottom.d.ts": "../es/examples/AffixBottom.d.ts",
-  "../es/examples/AffixTop.d.ts": "../es/examples/AffixTop.d.ts",
-  "../es/examples/UseContainer.d.ts": "../es/examples/UseContainer.d.ts",
-  "../es/node_modules/xy-manual-tools/manual/Components/CodeBox/index.d.ts": "../es/node_modules/xy-manual-tools/manual/Components/CodeBox/index.d.ts",
-  "../es/node_modules/xy-manual-tools/manual/Components/CodeSource/index.d.ts": "../es/node_modules/xy-manual-tools/manual/Components/CodeSource/index.d.ts",
-  "../es/node_modules/xy-manual-tools/manual/Components/Skeleton/index.d.ts": "../es/node_modules/xy-manual-tools/manual/Components/Skeleton/index.d.ts",
-  "../es/node_modules/xy-manual-tools/manual/Config/index.d.ts": "../es/node_modules/xy-manual-tools/manual/Config/index.d.ts",
-  "../es/node_modules/xy-manual-tools/manual/main.d.ts": "../es/node_modules/xy-manual-tools/manual/main.d.ts",
-  "../es/src/index.d.ts": "../es/src/index.d.ts",
-  "../es/src/useObserverScroll.d.ts": "../es/src/useObserverScroll.d.ts",
-  "../es/src/utils.d.ts": "../es/src/utils.d.ts",
   "index.html": "index.html",
   "static/js/polyfill.js": "static/js/polyfill.js"
 }
