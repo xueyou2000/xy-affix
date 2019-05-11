@@ -35,7 +35,7 @@ ReactDOM.render(
     <Affix offset={10}>
         <button>被固定的按钮</button>
     </Affix>,
-    container
+    container,
 );
 ```
 
@@ -53,7 +53,7 @@ ReactDOM.render(
 | --------- | -------------------------------------------------------------------- | ------------------------ | ------------- |
 | placement | 固定方向                                                             | "top", "bottom", "auto"  | "auto"        |
 | offset    | 偏移量, 离窗口侧达到指定偏移量后触发                                 | number                   | -             |
-| fixed     | 是否启用固定                                                         | number                   | boolean       | true |
+| fixed     | 是否启用固定                                                         | boolean                  | true          |
 | target    | 设置 Affix 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数 | () => HTMLElement        | () => windows |
 | onChange  | 固定状态改变回调                                                     | (fixed: boolean) => void | -             |
 

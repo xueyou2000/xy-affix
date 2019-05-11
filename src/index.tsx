@@ -14,9 +14,10 @@ export function Affix(props: AffixProps) {
     const ref = useRef(null);
     const fixedStyle = useRef<React.CSSProperties>({});
     const obEle = ref.current as HTMLElement;
-    const size = obEle ? { width: obEle.clientWidth, height: obEle.clientHeight } : {};
+    const size = obEle ? { width: obEle.offsetWidth + 1, height: obEle.offsetHeight } : {};
+    console.log(obEle, size);
     // const rawSizeStyle: React.CSSProperties = fixed ? size : {};
-    const rawSizeStyle: React.CSSProperties = size;
+    const rawSizeStyle: React.CSSProperties = fixed ? size : null;
     const classString = classNames(prefixCls, className, `${prefixCls}-fixed`);
 
     function toSetFixed(_fixed: boolean, _placement: string, iswindow: boolean = false, extOffset: number = 0) {
@@ -25,6 +26,7 @@ export function Affix(props: AffixProps) {
         }
         if (_fixed) {
             fixedStyle.current = { position: "fixed", ...size };
+            console.log("set fixedStyle.current ", fixedStyle.current);
             fixedStyle.current[iswindow ? _placement : "top"] = `${extOffset || offset}px`;
         } else {
             fixedStyle.current = {};
@@ -59,7 +61,7 @@ export function Affix(props: AffixProps) {
             if (placement === PlacementTop) {
                 toSetFixed(getScrollY(target) + offset >= element.offsetTop, placement, false, rect.top);
             } else {
-                toSetFixed(element.offsetTop + offset >= target.clientHeight + getScrollY(target) - rect.height, placement, false, rect.top);
+                toSetFixed(element.offsetTop + offset >= target.offsetHeight + getScrollY(target) - rect.height, placement, false, rect.top);
             }
         }
     }

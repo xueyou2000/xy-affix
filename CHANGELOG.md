@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.2 (Sat May 11 2019)
+
+-   修复获取元素宽度精度问题
+
 ## 1.2.1 (Sun May 05 2019)
 
 -   更新`xy-manual-tools`, 修复编译 demo
