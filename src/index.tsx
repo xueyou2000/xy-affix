@@ -15,7 +15,6 @@ export function Affix(props: AffixProps) {
     const fixedStyle = useRef<React.CSSProperties>({});
     const obEle = ref.current as HTMLElement;
     const size = obEle ? { width: obEle.offsetWidth + 1, height: obEle.offsetHeight } : {};
-    console.log(obEle, size);
     // const rawSizeStyle: React.CSSProperties = fixed ? size : {};
     const rawSizeStyle: React.CSSProperties = fixed ? size : null;
     const classString = classNames(prefixCls, className, `${prefixCls}-fixed`);
@@ -26,7 +25,6 @@ export function Affix(props: AffixProps) {
         }
         if (_fixed) {
             fixedStyle.current = { position: "fixed", ...size };
-            console.log("set fixedStyle.current ", fixedStyle.current);
             fixedStyle.current[iswindow ? _placement : "top"] = `${extOffset || offset}px`;
         } else {
             fixedStyle.current = {};

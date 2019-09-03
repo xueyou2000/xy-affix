@@ -22,7 +22,7 @@
 
 ```bash
 # yarn
-yarn add xy-affix utils-dom classnames
+yarn add xy-affix
 ```
 
 ## 使用例子

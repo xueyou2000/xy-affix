@@ -1,6 +1,6 @@
 {
     "name": "xy-affix",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "基于 React Hooks 的图钉组件",
     "types": "es/index.d.ts",
     "main": "es/index.js",
@@ -40,13 +40,13 @@
         "@types/react-dom": "16.8.2",
         "quick-react-scripts": "1.1.9",
         "react-testing-library": "^6.0.0",
-        "xy-manual-tools": "0.1.4"
+        "xy-manual-tools": "^0.1.64"
     },
     "dependencies": {
         "classnames": "^2.2.6",
         "react": "^16.8.2",
         "react-dom": "^16.8.2",
-        "utils-dom": "0.0.62"
+        "utils-dom": "^0.0.70"
     },
     "repository": {
         "type": "git",

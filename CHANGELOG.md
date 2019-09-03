@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.2.3 (Tue Sep 03 2019)
+
+-   更新`xy-manual-tools`
+-   清除控制台打印
+
 ## 1.2.2 (Sat May 11 2019)
 
 -   修复获取元素宽度精度问题
