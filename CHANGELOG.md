@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.3.0 (Tue Nov 19 2019)
+
+-   修复`react`与`react-dom`版本不一致导致的问题
+-   测试库迁移到`@testing-library/react"`
+
 ## 1.2.3 (Tue Sep 03 2019)
 
 -   更新`xy-manual-tools`
